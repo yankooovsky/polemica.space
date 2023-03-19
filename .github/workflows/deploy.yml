@@ -14,10 +14,10 @@ jobs:
         with:
           ref: club
       - run: docker login ghcr.io -u yankooovsky -p ${{ secrets.TOKEN }}
-      - run: docker pull ghcr.io/yankooovsky/polemica.club:latest || true
-      - run: docker build -t ghcr.io/yankooovsky/polemica.club:latest -t ghcr.io/yankooovsky/polemica.club:$GITHUB_SHA --cache-from=ghcr.io/yankooovsky/polemica.club:latest  .
-      - run: docker image push ghcr.io/yankooovsky/polemica.club:$GITHUB_SHA
-      - run: docker image push ghcr.io/yankooovsky/polemica.club:latest
+      - run: docker pull ghcr.io/yankooovsky/polemica.community:latest || true
+      - run: docker build -t ghcr.io/yankooovsky/polemica.community:latest -t ghcr.io/yankooovsky/polemica.community:$GITHUB_SHA --cache-from=ghcr.io/yankooovsky/polemica.community:latest  .
+      - run: docker image push ghcr.io/yankooovsky/polemica.community:$GITHUB_SHA
+      - run: docker image push ghcr.io/yankooovsky/polemica.community:latest
 
   deploy:
     name: Deploy
@@ -61,6 +61,6 @@ jobs:
           secret_WEBHOOK_SECRETS: ${{ secrets.WEBHOOK_SECRETS }}
       - run: echo "GITHUB_SHA=$GITHUB_SHA" >> .env
       - run: echo "${{ secrets.PRODUCTION_SSH_KEY }}" > ${{ env.SSH_KEY_PATH }} && chmod 600 ${{ env.SSH_KEY_PATH }}
-      - run: scp -o StrictHostKeyChecking=no -i ${{ env.SSH_KEY_PATH }} .env ${{ secrets.PRODUCTION_SSH_USERNAME }}@${{ secrets.PRODUCTION_SSH_HOST }}:/var/www/polemica.club/.env
-      - run: scp -o StrictHostKeyChecking=no -i ${{ env.SSH_KEY_PATH }} docker-compose.production.yml ${{ secrets.PRODUCTION_SSH_USERNAME }}@${{ secrets.PRODUCTION_SSH_HOST }}:/var/www/polemica.club/docker-compose.production.yml
-      - run: ssh -i ${{ env.SSH_KEY_PATH }} ${{ secrets.PRODUCTION_SSH_USERNAME }}@${{ secrets.PRODUCTION_SSH_HOST }} "cd /var/www/polemica.club && docker login ghcr.io -u yankooovsky -p ${{ secrets.TOKEN }} && docker pull ghcr.io/yankooovsky/polemica.club:$GITHUB_SHA && docker compose -f docker-compose.production.yml --env-file=.env up -d && docker system prune --all --force"
+      - run: scp -o StrictHostKeyChecking=no -i ${{ env.SSH_KEY_PATH }} .env ${{ secrets.PRODUCTION_SSH_USERNAME }}@${{ secrets.PRODUCTION_SSH_HOST }}:/var/www/polemica.community/.env
+      - run: scp -o StrictHostKeyChecking=no -i ${{ env.SSH_KEY_PATH }} docker-compose.production.yml ${{ secrets.PRODUCTION_SSH_USERNAME }}@${{ secrets.PRODUCTION_SSH_HOST }}:/var/www/polemica.community/docker-compose.production.yml
+      - run: ssh -i ${{ env.SSH_KEY_PATH }} ${{ secrets.PRODUCTION_SSH_USERNAME }}@${{ secrets.PRODUCTION_SSH_HOST }} "cd /var/www/polemica.community && docker login ghcr.io -u yankooovsky -p ${{ secrets.TOKEN }} && docker pull ghcr.io/yankooovsky/polemica.community:$GITHUB_SHA && docker compose -f docker-compose.production.yml --env-file=.env up -d && docker system prune --all --force"
