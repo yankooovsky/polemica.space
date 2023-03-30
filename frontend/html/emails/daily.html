@@ -5,10 +5,10 @@
 {% load emails %}
 
 {% block og_meta %}
-    <meta property="og:site_name" content="Вастрик.Клуб" />
+    <meta property="og:site_name" content="Polemica Community" />
     <meta property="og:title" content="Ежедневный дайджест" />
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Подборка событий в Клубе за день, составленная нашей бездушной, но очень вежливой машиной специально для вас." />
+    <meta property="og:description" content="Подборка событий в Коммьюнити за день, составленная нашей бездушной, но очень вежливой машиной специально для вас." />
     <meta property="og:image" content="{{ og_image_url }}" />
 {% endblock %}
 
@@ -49,7 +49,7 @@
         </p>
 
         <p class="editorial">
-            Вот подборка событий в Клубе за день, составленная нашей бездушной, но очень вежливой машиной специально для вас 👇
+            Вот подборка событий в Коммьюнити за день, составленная нашей бездушной, но очень вежливой машиной специально для вас 👇
         </p>
 
         {% if events %}
@@ -171,25 +171,6 @@
             </p>
         {% endif %}
     {% endif %}
-
-    <br>
-
-    {% if moon_phase %}
-        <h2>✨ Гороскоп в конце</h2>
-
-        <p class="editorial">
-            {% if moon_phase.club_day %}Сегодня {{ moon_phase.club_day }} день от сотворения Клуба{% endif %}{% if moon_phase.phase_num %} и {{ moon_phase.phase_num }}{% endif %}.
-            {% if moon_phase.phase_sign %}{{ moon_phase.phase_sign | capfirst }}.{% endif %}
-        </p>
-
-        {% if moon_phase.phase_description %}
-            <p class="editorial">
-                {{ moon_phase.phase_description }}
-            </p>
-        {% endif %}
-    {% endif %}
-
-    <br>
 
     <h2>Хорошего дня ❤️</h2>
 
