@@ -23,9 +23,9 @@ log = logging.getLogger(__name__)
 
 def command_help(update: Update, context: CallbackContext) -> None:
     update.effective_chat.send_message(
-        "✖️ <b>Я — твой личный бот для Вастрик.Клуба</b>\n\n"
+        "✖️ <b>Я — твой личный бот для Polemica Community</b>\n\n"
         "Через меня можно отвечать на комменты и посты — просто напиши "
-        "ответ реплаем на сообщение и я перепостю его в Клуб. "
+        "ответ реплаем на сообщение и я перепостю его в Коммьюнити. "
         "Так можно общаться в комментах даже не открывая сайт.\n\n"
         "Чтобы плюсануть — реплайни +.\n\n"
         "Еще я знаю всякие команды:\n\n"
@@ -33,7 +33,7 @@ def command_help(update: Update, context: CallbackContext) -> None:
         "/random - Почитать случайный пост (неплохо убивает время)\n\n"
         "/whois - Узнать профиль по телеграму\n\n"
         "/horo - Клубный гороскоп\n\n"
-        "/auth - Привязать бота к аккаунту в Клубе\n\n"
+        "/auth - Привязать бота к аккаунту в Коммьюнити\n\n"
         "/help - Справка",
         parse_mode=ParseMode.HTML
     )
@@ -50,7 +50,7 @@ def private_message(update: Update, context: CallbackContext) -> None:
     else:
         update.effective_chat.send_message(
             "Йо! Полный список моих команд покажет /help, "
-            "а еще мне можно отвечать на посты и уведомления, всё это будет поститься прямо в Клуб!",
+            "а еще мне можно отвечать на посты и уведомления, всё это будет поститься прямо в Коммьюнити!",
             parse_mode=ParseMode.HTML
         )
 
