@@ -112,7 +112,7 @@
                         <span class="profile-status-text">забанен</span>
                     {% elif user.deleted_at %}
                         <span class="profile-status-icon">🏃‍♀️</span>
-                        <span class="profile-status-text">удалился из Клуба</span>
+                        <span class="profile-status-text">удалился из сообщества</span>
                     {% elif not user.is_active_member %}
                         <span class="profile-status-icon">️😴</span>
                         <span class="profile-status-text">аккаунт неактивен</span>
@@ -144,7 +144,7 @@
                     {% else %}
                         <a href="{% url "toggle_mute" user.slug %}" class="profile-status clickable">
                             <span class="profile-status-icon">⛔️</span>
-                            <span class="profile-status-status">Я не хочу видеть его в Клубе</span>
+                            <span class="profile-status-status">Я не хочу видеть его в Коммьюнити</span>
                         </a>
                     {% endif %}
                 {% endif %}
@@ -304,7 +304,7 @@
         {% endif %}
 
         {% if achievements %}
-            <div class="profile-header">Ачивки от Клуба</div>
+            <div class="profile-header">Ачивки от Polemica Community</div>
 
             <div class="profile-achievements">
                 <div class="user-achievements">
