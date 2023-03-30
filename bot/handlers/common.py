@@ -64,9 +64,9 @@ def get_club_user(update: Update):
 
     if not user.is_member:
         if update.callback_query:
-            update.callback_query.answer(text=f"😣 Твой профиль в Клубе неактивен. Плоти долор!")
+            update.callback_query.answer(text=f"😣 Твой профиль в Коммьюнити неактивен. Плоти долор!")
         else:
-            update.message.reply_text(f"😣 Твой профиль в Клубе неактивен. Плоти долор!")
+            update.message.reply_text(f"😣 Твой профиль в Коммьюнити неактивен. Плоти долор!")
         return None
 
     return user
