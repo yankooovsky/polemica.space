@@ -12,15 +12,15 @@
 
             <div class="block-description" style="max-width: 100%;">
                 <p>
-                    Добро пожаловать в Клуб.
+                    Добро пожаловать в Polemica Community.
                 </p>
 
                 <p>
-                    Ваш аккаунт создан и вы можете залетать к нам в <a href="{% url "network" %}" rel="noreferrer" target="_blank">секретные чаты</a>, подписываться на <a href="{{ settings.TELEGRAM_CLUB_CHANNEL_URL }}" rel="noreferrer" target="_blank">канал</a> и читать закрытые <a href="https://vas3k.ru/blog/" rel="noreferrer" target="_blank">посты в блоге</a>.
+                    Ваш аккаунт создан и вы можете залетать к нам в <a href="{% url "network" %}" rel="noreferrer" target="_blank">секретные чаты</a> и подписываться на <a href="{{ settings.TELEGRAM_CLUB_CHANNEL_URL }}" rel="noreferrer" target="_blank">канал</a>.
                 </p>
 
                 <p>
-                    Но чтобы пустить вас в сам Клуб, <strong>нам надо познакомиться</strong>. Открытые дружеские отношения и отсутствие оголтелых анонимусов &mdash; залог здорового и недушного коммьюнити.
+                    Но чтобы пустить вас в само сообщество, <strong>нам надо познакомиться</strong>. Открытые дружеские отношения и отсутствие оголтелых анонимусов &mdash; залог здорового и недушного коммьюнити.
                 </p>
 
                 <p>
@@ -82,7 +82,7 @@
                 {{ form.country }} {{ form.city }}
                 {% if form.country.errors %}<span class="form-row-errors">{{ form.country.errors }}</span>{% endif %}
                 {% if form.city.errors %}<span class="form-row-errors">{{ form.city.errors }}</span>{% endif %}
-                <span class="form-row-help">Вдруг мы решим собраться на митап или типа того.</span>
+                <span class="form-row-help">Вдруг мы решим собраться поиграть в мафию или просто пообщаться.</span>
             </div>
 
             <div class="form-row">
@@ -131,7 +131,7 @@
                 {% if form.company.errors %}<span class="form-row-errors">{{ form.company.errors }}</span>{% endif %}
             </div>
 
-            <div class="block-header">😎<br>Расскажите Клубу о себе</div>
+            <div class="block-header">😎<br>Расскажите Коммьюнити о себе</div>
 
             <div class="block-description">
                 <p>
@@ -148,7 +148,7 @@
                     Но сначала <strong>его прочитает модератор, чтобы вы не попытались нас всех обмануть</strong>.
                 </p>
                 <p>
-                    Вот примеры хороших интро: <a href="https://vas3k.club/intro/vas3k/" target="_blank">Вастрик</a>, <a href="https://vas3k.club/intro/lena/" target="_blank">Лена</a>, <a href="https://vas3k.club/intro/Sciannadev/" target="_blank">Анна</a>.
+                    Вот примеры хороших интро: <a href="https://polemica.community/intro/yankovsky/" target="_blank">Ник</a>, <a href="https://polemica.community/intro/victorderr/" target="_blank">Виктор</a>.
                 </p>
             </div>
 
@@ -182,7 +182,7 @@
             <div class="block-header">📫<br>Как удобнее следить за происходящим?</div>
 
             <div class="block-description">
-                У всех нас мало времени. Клуб — не соцсеточка, которая хочет максимум вашего внимания.
+                У всех нас мало времени. Коммьюнити — не соцсеточка, которая хочет максимум вашего внимания.
                 Мы сразу предлагаем выбрать удобный для вас способ оставаться в курсе новых постов и событий.
             </div>
 
@@ -224,20 +224,20 @@
                 <div class="network-channels">
                     <a href="{{ settings.TELEGRAM_CLUB_CHANNEL_URL }}" rel="noreferrer" target="_blank" class="network-channel">
                         <span class="avatar network-channel-icon" style="background-image: url('https://i.vas3k.club/eab0c7350e8159ec630d820b430e41ac4ad9a7533b7e5cbb931618e8d6e70233.jpg');"></span>
-                        <span class="network-channel-name text-120">Телеграм-канал Клуба</span>
-                        <span class="network-channel-description">Лучшие посты, отобранные руками</span>
+                        <span class="network-channel-name text-120">Телеграм-канал Коммьюнити</span>
+                        <span class="network-channel-description">Лучшие контент, отобранный руками</span>
                     </a>
 
-                    <a href="https://twitter.com/vas3k_club" target="_blank" class="network-channel">
-                        <span class="avatar network-channel-icon" style="background-image: url('https://i.vas3k.club/9d12a3d9dd99fecbc9eb7b76174ed7bcc0328989103c80439aaeb725b3c68ee7.jpg');"></span>
-                        <span class="network-channel-name text-120">Твиттер-фид</span>
-                        <span class="network-channel-description">Бездушная машина постит ссылки на новые посты</span>
+                    <a href="https://t.me/PolemicaFeed" target="_blank" class="network-channel">
+                        <span class="avatar network-channel-icon" style="background-image: url('https://i.polemica.community/ae961d938eaea0ed01284213326bd5d32a59201cc2056296372d1725af8d3934.jpg');"></span>
+                        <span class="network-channel-name text-120">Feed</span>
+                        <span class="network-channel-description">Лента событий коммьюнити/span>
                     </a>
 
                     <a href="{{ settings.TELEGRAM_CLUB_CHAT_URL }}" rel="noreferrer" target="_blank" class="network-channel">
                         <span class="avatar network-channel-icon" style="background-image: url('https://i.vas3k.club/b8c8cc57c58470a1ea7633b53e5f8014a7d9ad638169c440a3cfc6ff6a89da59.jpg');"></span>
-                        <span class="network-channel-name text-120">Вастрик.Бар</span>
-                        <span class="network-channel-description">Главный чат Клуба (там бывает шумно)</span>
+                        <span class="network-channel-name text-120">Chat</span>
+                        <span class="network-channel-description">Главный чат Коммьюнити</span>
                     </a>
 
                     <a href="{% url "network" %}" target="_blank" class="network-channel">
@@ -253,7 +253,7 @@
 
             <div class="block-description">
                 <p>
-                    На бота завязано много фич Клуба — он присылает ответы на комментарии, через него можно отвечать и получать статистику.
+                    На бота завязано много фич Коммьюнити — он присылает ответы на комментарии, через него можно отвечать и получать статистику.
                     Лучше сразу его подключить, иначе потом забудете и пропустите всё важное.
                 </p>
 
