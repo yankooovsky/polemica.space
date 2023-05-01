@@ -8,13 +8,13 @@ class Topic(models.Model):
 
     name = models.CharField(max_length=64, null=False)
     icon = models.URLField(null=True)
-    description = models.TextField(null=True)
+    description = models.TextField(null=True, blank=True)
     color = models.CharField(max_length=16, null=False)
-    style = models.CharField(max_length=256, default="", null=True)
+    style = models.CharField(max_length=256, default="", null=True, blank=True)
 
-    chat_name = models.CharField(max_length=128, null=True)
-    chat_url = models.URLField(null=True)
-    chat_id = models.CharField(max_length=64, null=True)
+    chat_name = models.CharField(max_length=128, null=True, blank=True)
+    chat_url = models.URLField(null=True, blank=True)
+    chat_id = models.CharField(max_length=64, null=True, blank=True)
 
     last_activity_at = models.DateTimeField(auto_now_add=True, null=False)
 
