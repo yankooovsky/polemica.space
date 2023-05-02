@@ -38,7 +38,7 @@ def send_mass_email(to_user: User):
     invite_template = loader.get_template("emails/mass-mailing/invite3months.html")
     send_club_email(
         recipient=to_user.email,
-        subject=f"🚀 Вас пригласили в Клуб Polemica",
+        subject=f"🚀 Вас пригласили в Polemica Community",
         html=invite_template.render({"to_user": to_user}),
         tags=["invited"]
     )
