@@ -33,30 +33,3 @@ class Command(BaseCommand):
             ),
         )
         send_mass_email(user)
-
-
-
-
-
-
-
-
-
-
-        usernames = [u.strip().replace("@", "") for u in options["users"].split(",") if u.strip()]
-
-        achievement = Achievement.objects.filter(code=achievement_code).first()
-        if not achievement:
-            self.stdout.write(f"Achievement not found: '{achievement_code}'")
-            return
-
-        users = User.objects.filter(slug__in=usernames)
-        for user in users:
-            user_achievement, is_created = UserAchievement.objects.get_or_create(
-                user=user,
-                achievement=achievement,
-            )
-            if is_created:
-                async_create_or_update_achievement(user_achievement)
-
-        self.stdout.write("Done 🥙")
