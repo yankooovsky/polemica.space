@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 from authn.models.openid import OAuth2App, OAuth2Token, OAuth2AuthorizationCode
+from authn.models.session import Session, Code
 
 
 class OAuth2AppAdmin(admin.ModelAdmin):
@@ -45,3 +46,16 @@ class OAuth2AuthorizationCodeAdmin(admin.ModelAdmin):
 
 
 admin.site.register(OAuth2AuthorizationCode, OAuth2AuthorizationCodeAdmin)
+
+
+@admin.register(Code)
+class CodeAdmin(admin.ModelAdmin):
+    list_display = (
+        "id",
+        "recipient",
+        "code",
+        "user",
+        "created_at",
+        "expires_at",
+    )
+    ordering = ("-created_at",)
