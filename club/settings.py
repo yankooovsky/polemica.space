@@ -183,8 +183,8 @@ DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "Polemica.Community <no-rep
 # App
 
 APP_HOST = os.environ.get("APP_HOST") or "http://127.0.0.1:8000"
-APP_NAME = "Вастрик.Клуб"
-APP_DESCRIPTION = "Всё интересное происходит за закрытыми дверями"
+APP_NAME = "Polemica Community"
+APP_DESCRIPTION = "Настало время поговорить открыто."
 LAUNCH_DATE = datetime(2020, 4, 13)
 
 AUTH_CODE_LENGTH = 6
@@ -299,7 +299,7 @@ MIN_DAYS_TO_GIVE_BADGES = 35  # minimum "days" balance to buy and gift any badge
 MAX_MUTE_COUNT = 10  # maximum number of users allowed to mute
 CLEARED_POST_TEXT = "```\n" \
     "😥 Этот пост был удален самим автором и от него остались лишь комментарии участников. " \
-    "Если вы хотите приютить и развить эту тему как новый автор, напишите модераторам Клуба: moderator@polemica.community." \
+    "Если вы хотите приютить и развить эту тему как новый автор, напишите модераторам Коммьюнити: moderator@polemica.community." \
     "\n```"
 
 
