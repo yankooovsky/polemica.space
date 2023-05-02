@@ -32,3 +32,13 @@ def send_invite_confirmation(from_user: User, to_user: User):
         html=invite_template.render({"from_user": from_user, "to_user": to_user}),
         tags=["invited"]
     )
+
+
+def send_mass_email(to_user: User):
+    invite_template = loader.get_template("emails/mass-mailing/invite3months.html")
+    send_club_email(
+        recipient=to_user.email,
+        subject=f"🚀 Вас пригласили в Клуб Polemica",
+        html=invite_template.render({"to_user": to_user}),
+        tags=["invited"]
+    )
