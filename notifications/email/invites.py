@@ -35,7 +35,7 @@ def send_invite_confirmation(from_user: User, to_user: User):
 
 
 def send_mass_email(to_user: User):
-    invite_template = loader.get_template("emails/mass-mailing/invite3months.html")
+    invite_template = loader.get_template("emails/mass-mailing/invite45days.html")
     send_club_email(
         recipient=to_user.email,
         subject=f"🚀 Вас пригласили в Polemica Community",
