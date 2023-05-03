@@ -52,7 +52,7 @@ class Command(BaseCommand):
 
             self.stdout.write(f"Sending email to {email}...")
 
-            days = 90
+            days = 45
             now = datetime.utcnow()
             user, is_created = User.objects.get_or_create(
                 email=email,
