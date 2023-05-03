@@ -1,4 +1,5 @@
 import logging
+from time import sleep
 from datetime import datetime, timedelta
 
 from django.core.management import BaseCommand
@@ -16,8 +17,10 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument("--production", type=bool, required=False, default=False)
+        parser.add_argument("--limit", type=int, required=False, default=EMAILS_LIMIT)
 
     def handle(self, *args, **options):
+        limit = options.get("limit", EMAILS_LIMIT)
         emails_filename = "/app/gdpr/downloads/polemica_users_emails.csv"
         sended_filename = "/app/gdpr/downloads/polemica_users_emails_sended.csv"
 
@@ -38,7 +41,7 @@ class Command(BaseCommand):
                 continue
 
             count += 1
-            if count > EMAILS_LIMIT:
+            if count > limit:
                 break
 
             sended.add(email)
@@ -50,7 +53,7 @@ class Command(BaseCommand):
                 self.stdout.write(f"Try to send email to {email}...")
                 continue
 
-            self.stdout.write(f"Sending email to {email}...")
+            self.stdout.write(f"{count:03d} Sending email to {email}...")
 
             days = 45
             now = datetime.utcnow()
