@@ -18,9 +18,11 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument("--production", type=bool, required=False, default=False)
         parser.add_argument("--limit", type=int, required=False, default=EMAILS_LIMIT)
+        parser.add_argument("--pause", type=int, required=False, default=0)
 
     def handle(self, *args, **options):
         limit = options.get("limit", EMAILS_LIMIT)
+        pause = options.get("pause", 0)
         emails_filename = "/app/gdpr/downloads/polemica_users_emails.csv"
         sended_filename = "/app/gdpr/downloads/polemica_users_emails_sended.csv"
 
@@ -73,3 +75,5 @@ class Command(BaseCommand):
                 print(send_mass_email(user))
             except Exception as e:
                 print(e)
+
+            sleep(pause)
