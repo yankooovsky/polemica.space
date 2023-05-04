@@ -67,7 +67,7 @@ class UserIntroForm(ModelForm):
         widget=forms.Textarea(
             attrs={
                 "maxlength": 10000,
-                "minlength": 600,
+                "minlength": 400,
                 "placeholder": "Расскажите Клубу о себе...",
             }
         ),
