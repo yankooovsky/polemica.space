@@ -19,7 +19,7 @@ class ProfileEditForm(ModelForm):
     full_name = forms.CharField(
         label="Имя и Фамилия",
         required=True,
-        max_length=120
+        max_length=128
     )
     city = forms.CharField(
         label="город",
