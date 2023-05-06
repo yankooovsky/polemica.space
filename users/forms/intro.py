@@ -11,7 +11,7 @@ from common.forms import ImageUploadField
 
 class UserIntroForm(ModelForm):
     slug = forms.CharField(
-        label="Никнейм",
+        label="Никнейм в Коммьюнити",
         required=True,
         max_length=32,
         min_length=3,
@@ -21,7 +21,7 @@ class UserIntroForm(ModelForm):
         }),
     )
     full_name = forms.CharField(
-        label="Как вас зовут",
+        label="Имя и Фамилия",
         required=True,
         max_length=128
     )
