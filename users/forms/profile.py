@@ -16,6 +16,11 @@ class ProfileEditForm(ModelForm):
         resize=(512, 512),
         convert_to="jpg",
     )
+    full_name = forms.CharField(
+        label="Имя и Фамилия",
+        required=True,
+        max_length=120
+    )
     city = forms.CharField(
         label="город",
         required=True,
@@ -47,6 +52,7 @@ class ProfileEditForm(ModelForm):
         model = User
         fields = [
             "avatar",
+            "full_name",
             "company",
             "position",
             "city",
