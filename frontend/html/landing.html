@@ -22,85 +22,12 @@
 {% block body %}
     <main class="landing">
         <div class="landing-block landing-block-limited">
-            <img src="{% static "images/logo/logo-1024.png" %}" alt="">
+            <img src="{% static "images/earth.png" %}" alt="">
             <div class="landing-title">
                 <h2>Polemica <br> Community</h2>
-                <p>Настало время поговорить открыто</p>
+                <p>Неанонимный клуб по интересам.</p>
+                 <p><a href="{% url "docs" "about" %}" target="_blank">Текст</a> про нас</p>
                 <a href="{% url "login" %}" class="button button-black">Войти</a>
-            </div>
-        </div>
-
-        <div class="landing-block landing-block-narrow" id="why">
-            <div>
-                <h2>ЗАЧЕМ</h2>
-
-                <p>
-                    В большом интернете стало тесно, душно, а зачастую и просто опасно. Спасаясь, мы сидим по закрытым чатикам.
-                    Это снижает наши возможности заводить новые интересные знакомства и решать жизненные проблемы.
-                </p>
-
-                <p>
-                    Поэтому нам нужно Коммьюнити — закрытое пространство, в котором классные люди делятся опытом в комфортной обстановке,  развлекаются и поддерживают друг друга.
-                </p>
-
-                <p>
-                Общий интерес большинства из нас – то, что мы называем «интеллектуальные игры». Например, полемика, настолки, шахматы, покер, you name it.
-                    Но сообщество не ограничивается этой тематикой. Мы любим истории, личный опыт, инсайды, свежие идеи и искренние разговоры на любые темы.
-                </p>
-
-            </div>
-        </div>
-
-        <div class="landing-block landing-block-limited" id="features">
-            <h2 class="landing-block-title">Что внутри?</h2>
-        </div>
-
-        <div class="landing-block landing-block-limited">
-            <div class="landing-block-60">
-                <h3 class="feature-title">Чужой опыт и инсайды</h3>
-
-                <ul class="feature-list">
-                    <li>В Коммьюнити пишут статьи, просят советов, делятся идеями и показывают пет-проджекты</li>
-                    <li>Формат «только для своих» позволяет обсуждать темы без посторонних</li>
-                    <li>Комментарии больше не зашквар</li>
-                    <li>Никаких алгоритмических лент, охоты за вниманием и FOMO</li>
-                </ul>
-            </div>
-             <div class="landing-block-40">
-                    <img src="{% static "images/landing/calmness.png" %}" width="300" class="feature-image" alt="insides">
-                </div>
-        </div>
-
-        <div class="landing-block landing-block-limited">
-            <div class="landing-block-50">
-                <img src="{% static "images/landing/rooms.png" %}" class="feature-image" alt="chats" style="padding-top: 40px;">
-            </div>
-
-            <div class="landing-block-50">
-                <h3 class="feature-title">Тусовки по интересам</h3>
-
-                <ul class="feature-list">
-                    <li>Сеть клубных чатиков в телеграме</li>
-                    <li>Коммьюнити по городам и странам</li>
-                    <li>Место, в котором хорошо</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="landing-block landing-block-limited">
-            <div class="landing-block-40">
-                <h3 class="feature-title">Движухи, фан и взаимопомощь</h3>
-
-                <ul class="feature-list">
-                    <li>Встречи и совместные игры в офлайне</li>
-                    <li>Коучинг и менторство между участниками Клуба</li>
-                    <li>У нас запрещена анонимность и действует жесткая модерация. Так мы сохраняем здоровое сообщество</li>
-                    <li>Подробнее о правилах можно почитать в разделе <a href="{% url "docs" "about" %}" target="_blank">О Коммьюнити</a></li>
-                </ul>
-            </div>
-
-            <div class="landing-block-60">
-                <img src="{% static "images/landing/snoop-dogg-rap.gif" %}" class="feature-image" alt="chats">
             </div>
         </div>
 
@@ -118,7 +45,7 @@
                 </p>
 
                 <p>
-                    Плюс, мы не пускаем анонимов. Вам придется заполнить профиль и рассказать о себе.
+                    Мы не пускаем анонимов. Вам придется заполнить профиль и рассказать о себе.
                 </p>
 
                 <br>
